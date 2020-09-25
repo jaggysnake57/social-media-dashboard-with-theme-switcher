@@ -1,0 +1,389 @@
+// vars
+//# Colors
+
+//### Primary
+
+$Lime-Green: hsl(163, 72%, 41%);
+$Bright-Red: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$YouTube: hsl(348, 97%, 39%);
+
+//#### Dark Theme
+
+$Toggle-BG: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+//#### Light Theme
+
+$Toggle: hsl(230, 22%, 74%);
+
+//### Neutral
+
+//#### Dark Theme
+
+$Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+$Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+$Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+$Desaturated-Blue-Text: hsl(228, 34%, 66%);
+$White-Text: hsl(0, 0%, 100%);
+
+//#### Light Theme
+
+$White-BG: hsl(0, 0%, 100%);
+$Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+$Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+$Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+$Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+
+/*=============================================
+=            reset            =
+=============================================*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+hr {
+	border: none;
+}
+/*=============================================
+=            common classes            =
+=============================================*/
+span {
+	margin-right: 5px;
+	position: relative;
+	&:before {
+		content: "";
+		width: 15px;
+		height: 15px;
+		left: -16px;
+		position: absolute;
+	}
+}
+
+.down {
+	color: $Bright-Red;
+	span {
+		&:before {
+			background: url('../images/icon-down.svg') no-repeat center;
+		}
+	}
+}
+.up {
+	color: $Lime-Green;
+	span {
+		&:before {
+			background: url('../images/icon-up.svg') no-repeat center;
+		}
+	}
+}
+
+.facebook {
+	background: hsl(208, 92%, 53%);
+}
+.twitter {
+	background: hsl(203, 89%, 53%);
+}
+.instagram {
+	background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+.youTube {
+	background: hsl(348, 97%, 39%);
+}
+
+/*=============================================
+=            foundation            =
+=============================================*/
+body {
+	font-family: 'Inter', sans-serif;
+	// background-color: black;
+	font-size: 14px;
+}
+
+.mockBody {
+	width: 100vw;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+.topBGOffset {
+	width: 100vw;
+	height: 200px;
+	border-radius: 0 0 10px 10px;
+}
+.container {
+	width: 75%;
+	max-width: 1024px;
+	margin: -150px auto 0 auto;
+}
+
+/*----------  top bar  ----------*/
+.topBar {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 40px;
+	.title {
+		h1 {
+			color: $White-Text;
+			font-size: 2em;
+		}
+		p {
+			color: $Desaturated-Blue-Text;
+			font-weight: bold;
+		}
+	}
+	.toggle {
+		display: flex;
+		align-items: center;
+		p {
+			font-weight: bold;
+			margin-right: 1rem;
+		}
+		.switch {
+			.slider {
+				background-color: none;
+				background: $Toggle-BG;
+				&:before {
+					background-color: $Very-Dark-Blue-Top-BG-Pattern;
+				}
+			}
+			input:checked + .slider:before {
+				background-color: $White-BG;
+			}
+		}
+	}
+}
+
+/*----------  social main stats  ----------*/
+
+.socialMain {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 40px;
+	.socialCardFull {
+		width: 235px;
+		text-align: center;
+		padding: 2rem 0;
+		color: $Desaturated-Blue-Text;
+		border-radius: 5px;
+		overflow: hidden;
+		position: relative;
+		&:hover {
+			cursor: pointer;
+		}
+		.cardTopStrip {
+			position: absolute;
+			top: -4px;
+			width: 300px;
+			height: 10px;
+		}
+		.username {
+			font-size: 1em;
+			margin-bottom: 20px;
+			img {
+				margin-right: .5rem;
+				margin-bottom: -5px;
+			}
+		}
+		.followers {
+			// color: $White-Text;
+			font-weight: bold;
+			font-size: 3.5em;
+		}
+		.followText {
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			margin-bottom: 25px;
+		}
+		.dailyChange {
+			font-weight: bold;
+			font-size: .9em;
+		}
+	}
+}
+
+/*=============================================
+=            social overview            =
+=============================================*/
+
+.socialOverview {
+	h2 {
+		margin-bottom: 20px;
+		font-size: 1.7em;
+	}
+	.cards {
+		display: flex;
+		justify-content: space-between;
+		color: $Desaturated-Blue-Text;
+		.column {
+			width: 235px;
+			display: flex;
+			flex-direction: column;
+		}
+		.cardSingle {
+			width: 100%;
+			// background-color: green;
+			margin-bottom: 15px;
+			padding: 30px;
+			border-radius: 5px;
+			cursor: pointer;
+			h3 {
+				font-size: .9em;
+			}
+			.top,
+			.bottom {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.top {
+				margin-bottom: 30px;
+			}
+			.figure {
+				font-weight: bold;
+				font-size: 2em;
+				& + p {
+					font-size: .9em;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+/*=============================================
+=            dark theme            =
+=============================================*/
+
+.themeDark {
+	background-color: $Very-Dark-Blue-BG;
+	.topBGOffset {
+		background-color: $Very-Dark-Blue-Top-BG-Pattern;
+	}
+	.title {
+		h1 {
+			color: $White-Text;
+		}
+		p {
+			color: $Desaturated-Blue-Text;
+		}
+	}
+	.toggle {
+		p {
+			color: $White-Text;
+		}
+	}
+	.socialCardFull {
+		background-color: $Dark-Desaturated-Blue-Card-BG;
+
+		&:hover {
+			background-color: $Dark-Grayish-Blue-Text;
+		}
+		.followers {
+			color: $White-Text;
+		}
+	}
+
+	.socialOverview {
+		h2 {
+			color: $White-Text;
+		}
+		.cardSingle {
+			background-color: $Dark-Desaturated-Blue-Card-BG;
+			&:hover {
+				background-color: $Dark-Grayish-Blue-Text;
+			}
+			.figure {
+				color: $White-Text;
+			}
+		}
+	}
+}
+
+/*=============================================
+=            light theme            =
+=============================================*/
+
+.themeLight {
+	background-color: $White-BG;
+	.topBGOffset {
+		background-color: $Very-Pale-Blue-Top-BG-Pattern;
+	}
+	.title {
+		h1 {
+			color: $Very-Dark-Blue-Text;
+		}
+		p {
+			color: $Dark-Grayish-Blue-Text;
+		}
+	}
+	.toggle {
+		p {
+			color: $Dark-Grayish-Blue-Text;
+		}
+	}
+	.socialCardFull {
+		background-color: $Light-Grayish-Blue-Card-BG;
+
+		&:hover {
+			background-color: $Dark-Grayish-Blue-Text;
+		}
+		.followers {
+			color: $Very-Dark-Blue-Text;
+		}
+	}
+
+	.socialOverview {
+		h2 {
+			color: $Dark-Grayish-Blue-Text;
+		}
+		.cardSingle {
+			background-color: $Light-Grayish-Blue-Card-BG;
+			&:hover {
+				background-color: $Dark-Grayish-Blue-Text;
+			}
+			.figure {
+				color: $Very-Dark-Blue-Text;
+			}
+		}
+	}
+}
+@media screen and (max-width: 375px) {
+	.mockBody {
+		height: auto;
+		.topBar {
+			flex-direction: column;
+			.title {
+				margin-bottom: 20px;
+				h1 {
+					font-size: 1.7em;
+				}
+				& + hr {
+					margin-bottom: 20px;
+					border-top: 1px solid $Toggle;
+				}
+			}
+			.toggle {
+				justify-content: space-between;
+			}
+		}
+		.socialMain {
+			flex-direction: column;
+			align-items: center;
+			.socialCardFull {
+				margin-bottom: 20px;
+				width: 100%;
+			}
+		}
+		.cards {
+			flex-direction: column;
+			align-items: center;
+			.column {
+				width: 100%;
+			}
+		}
+	}
+}

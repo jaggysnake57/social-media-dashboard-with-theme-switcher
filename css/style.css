@@ -1,0 +1,249 @@
+/*=============================================
+=            reset            =
+=============================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+hr {
+  border: none; }
+
+/*=============================================
+=            common classes            =
+=============================================*/
+span {
+  margin-right: 5px;
+  position: relative; }
+  span:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    left: -16px;
+    position: absolute; }
+
+.down {
+  color: #dc414c; }
+  .down span:before {
+    background: url("../images/icon-down.svg") no-repeat center; }
+
+.up {
+  color: #1db489; }
+  .up span:before {
+    background: url("../images/icon-up.svg") no-repeat center; }
+
+.facebook {
+  background: #198ff5; }
+
+.twitter {
+  background: #1ca0f2; }
+
+.instagram {
+  background: linear-gradient(to right, #fdc468, #df4996); }
+
+.youTube {
+  background: #c4032a; }
+
+/*=============================================
+=            foundation            =
+=============================================*/
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px; }
+
+.mockBody {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto; }
+
+.topBGOffset {
+  width: 100vw;
+  height: 200px;
+  border-radius: 0 0 10px 10px; }
+
+.container {
+  width: 75%;
+  max-width: 1024px;
+  margin: -150px auto 0 auto; }
+
+/*----------  top bar  ----------*/
+.topBar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 40px; }
+  .topBar .title h1 {
+    color: white;
+    font-size: 2em; }
+  .topBar .title p {
+    color: #8b97c6;
+    font-weight: bold; }
+  .topBar .toggle {
+    display: flex;
+    align-items: center; }
+    .topBar .toggle p {
+      font-weight: bold;
+      margin-right: 1rem; }
+    .topBar .toggle .switch .slider {
+      background-color: none;
+      background: linear-gradient(#378fe6, #3eda82); }
+      .topBar .toggle .switch .slider:before {
+        background-color: #1f212e; }
+    .topBar .toggle .switch input:checked + .slider:before {
+      background-color: white; }
+
+/*----------  social main stats  ----------*/
+.socialMain {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px; }
+  .socialMain .socialCardFull {
+    width: 235px;
+    text-align: center;
+    padding: 2rem 0;
+    color: #8b97c6;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative; }
+    .socialMain .socialCardFull:hover {
+      cursor: pointer; }
+    .socialMain .socialCardFull .cardTopStrip {
+      position: absolute;
+      top: -4px;
+      width: 300px;
+      height: 10px; }
+    .socialMain .socialCardFull .username {
+      font-size: 1em;
+      margin-bottom: 20px; }
+      .socialMain .socialCardFull .username img {
+        margin-right: .5rem;
+        margin-bottom: -5px; }
+    .socialMain .socialCardFull .followers {
+      font-weight: bold;
+      font-size: 3.5em; }
+    .socialMain .socialCardFull .followText {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 25px; }
+    .socialMain .socialCardFull .dailyChange {
+      font-weight: bold;
+      font-size: .9em; }
+
+/*=============================================
+=            social overview            =
+=============================================*/
+.socialOverview h2 {
+  margin-bottom: 20px;
+  font-size: 1.7em; }
+
+.socialOverview .cards {
+  display: flex;
+  justify-content: space-between;
+  color: #8b97c6; }
+  .socialOverview .cards .column {
+    width: 235px;
+    display: flex;
+    flex-direction: column; }
+  .socialOverview .cards .cardSingle {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+    .socialOverview .cards .cardSingle h3 {
+      font-size: .9em; }
+    .socialOverview .cards .cardSingle .top,
+    .socialOverview .cards .cardSingle .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .socialOverview .cards .cardSingle .top {
+      margin-bottom: 30px; }
+    .socialOverview .cards .cardSingle .figure {
+      font-weight: bold;
+      font-size: 2em; }
+      .socialOverview .cards .cardSingle .figure + p {
+        font-size: .9em;
+        font-weight: bold; }
+
+/*=============================================
+=            dark theme            =
+=============================================*/
+.themeDark {
+  background-color: #1e202a; }
+  .themeDark .topBGOffset {
+    background-color: #1f212e; }
+  .themeDark .title h1 {
+    color: white; }
+  .themeDark .title p {
+    color: #8b97c6; }
+  .themeDark .toggle p {
+    color: white; }
+  .themeDark .socialCardFull {
+    background-color: #252a41; }
+    .themeDark .socialCardFull:hover {
+      background-color: #63687e; }
+    .themeDark .socialCardFull .followers {
+      color: white; }
+  .themeDark .socialOverview h2 {
+    color: white; }
+  .themeDark .socialOverview .cardSingle {
+    background-color: #252a41; }
+    .themeDark .socialOverview .cardSingle:hover {
+      background-color: #63687e; }
+    .themeDark .socialOverview .cardSingle .figure {
+      color: white; }
+
+/*=============================================
+=            light theme            =
+=============================================*/
+.themeLight {
+  background-color: white; }
+  .themeLight .topBGOffset {
+    background-color: #f5f7ff; }
+  .themeLight .title h1 {
+    color: #1e202a; }
+  .themeLight .title p {
+    color: #63687e; }
+  .themeLight .toggle p {
+    color: #63687e; }
+  .themeLight .socialCardFull {
+    background-color: #f0f2fa; }
+    .themeLight .socialCardFull:hover {
+      background-color: #63687e; }
+    .themeLight .socialCardFull .followers {
+      color: #1e202a; }
+  .themeLight .socialOverview h2 {
+    color: #63687e; }
+  .themeLight .socialOverview .cardSingle {
+    background-color: #f0f2fa; }
+    .themeLight .socialOverview .cardSingle:hover {
+      background-color: #63687e; }
+    .themeLight .socialOverview .cardSingle .figure {
+      color: #1e202a; }
+
+@media screen and (max-width: 375px) {
+  .mockBody {
+    height: auto; }
+    .mockBody .topBar {
+      flex-direction: column; }
+      .mockBody .topBar .title {
+        margin-bottom: 20px; }
+        .mockBody .topBar .title h1 {
+          font-size: 1.7em; }
+        .mockBody .topBar .title + hr {
+          margin-bottom: 20px;
+          border-top: 1px solid #aeb3cb; }
+      .mockBody .topBar .toggle {
+        justify-content: space-between; }
+    .mockBody .socialMain {
+      flex-direction: column;
+      align-items: center; }
+      .mockBody .socialMain .socialCardFull {
+        margin-bottom: 20px;
+        width: 100%; }
+    .mockBody .cards {
+      flex-direction: column;
+      align-items: center; }
+      .mockBody .cards .column {
+        width: 100%; } }
